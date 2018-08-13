@@ -11,7 +11,6 @@ RUN \
   chmod 666 /etc/apache2/ports.conf && \
   echo "SSLProtocol ALL -SSLv2 -SSLv3" >> /etc/apache2/apache2.conf && \
   a2enmod deflate rewrite ssl headers cgi expires include && \
-  service apache2 reload &&\
   a2disconf other-vhosts-access-log && \
   a2enconf vhosts-logging && \
   apt-get -y autoremove build-essential apache2-dev git && \
