@@ -9,8 +9,7 @@ RUN \
                 /etc/apache2/sites-* /etc/apache2/mods-* /etc/apache2/conf-* \
                 /var/www && \
   chmod 666 /etc/apache2/ports.conf && \
-  a2enmod deflate rewrite ssl headers cgi expires include && \
-  a2dismod mpm_event; \
+  a2enmod rewrite ssl headers cgi mpm_prefork include && \
   apt-get -y autoremove build-essential apache2-dev git && \
   rm -rf /var/lib/apt/lists/*
 
