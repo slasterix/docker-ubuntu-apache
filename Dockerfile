@@ -9,7 +9,6 @@ RUN \
                 /etc/apache2/sites-* /etc/apache2/mods-* /etc/apache2/conf-* \
                 /var/www && \
   chmod 666 /etc/apache2/ports.conf && \
-  echo "SSLProtocol ALL -SSLv2 -SSLv3" >> /etc/apache2/apache2.conf && \
   a2enmod deflate rewrite ssl headers cgi expires include && \
   apt-get -y autoremove build-essential apache2-dev git && \
   rm -rf /var/lib/apt/lists/*
