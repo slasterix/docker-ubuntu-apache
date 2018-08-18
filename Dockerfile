@@ -14,4 +14,4 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 EXPOSE 80 443
-CMD ["apachectl start"]
+CMD apachectl -D FOREGROUND
