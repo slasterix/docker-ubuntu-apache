@@ -12,6 +12,6 @@ RUN \
   a2enmod proxy proxy_http remoteip rewrite ssl headers && \
   apt-get -y autoremove build-essential apache2-dev git && \
   rm -rf /var/lib/apt/lists/*
-
+CMD echo "ServerName localhost" >> /etc/apache2/apache2.conf
 EXPOSE 80 443
 CMD apachectl -D FOREGROUND
