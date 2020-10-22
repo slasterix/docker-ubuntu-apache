@@ -9,7 +9,7 @@ RUN \
                 /etc/apache2/sites-* /etc/apache2/mods-* /etc/apache2/conf-* \
                 /var/www && \
   chmod 666 /etc/apache2/ports.conf && \
-  a2enmod proxy proxy_http remoteip rewrite ssl headers authz_host && \
+  a2enmod proxy proxy_http remoteip rewrite ssl headers authz_host proxy_wstunnel && \
   apt-get -y autoremove build-essential apache2-dev git && \
   rm -rf /var/lib/apt/lists/*
 CMD echo "ServerName localhost" >> /etc/apache2/apache2.conf
